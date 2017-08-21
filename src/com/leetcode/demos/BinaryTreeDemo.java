@@ -17,7 +17,7 @@ public class BinaryTreeDemo {
     	int m = 0;
     	int n = m + 1;
     	while(true){
-    	    System.out.println("log n = "+n);
+//    	    System.out.println("log n = "+n);
             nodes[m].lChild = nodes[n++];
             if (n == nodes.length -1) break;
             nodes[m].rChild = nodes[n++];
@@ -31,9 +31,16 @@ public class BinaryTreeDemo {
     	// 先序遍历二叉树
 //    	preOrderTraverse(nodes[0]);
     	
+    	// 中根遍历
+    	inOrderTraverse(nodes[0]);
+    	
     	// 最大深度
     	int maxDepth = maxDepth(nodes[0]);
     	System.out.println("max depth = " + maxDepth);
+    	
+    	// 最小深度
+    	int minDepth = minDepth(nodes[1]);
+    	System.out.println("min depth = " + minDepth);
     }
     	
 
@@ -52,23 +59,19 @@ public class BinaryTreeDemo {
         }
     }
     
-    
-    
     /**
-     * 给定一个二叉树，计算该二叉树的最大深度 最大深度为根节点到最远叶子节点的距离
+     * 给定一个二叉树，计算该二叉树的最小深度 最小深度为根节点到最近叶子节点的距离
      */
-    
-    
-//    public static int getMaxDepth(TreeNode root) {
-//        if (root == null) {
-//            return 0;
-//        } else {
-//            int left = getMaxDepth(root.left);
-//            int right = getMaxDepth(root.right);
-//
-//            return 1 + Math.max(left, right);
-//        }
-//    }
+    public static int minDepth (BiTNode root){
+        if (root == null) {
+            return 0;
+        } else {
+            if (root.lChild == null) return minDepth(root.rChild) + 1;
+            if (root.rChild == null) return minDepth(root.lChild) + 1;
+            
+            return Math.min(minDepth(root.lChild), minDepth(root.rChild)) + 1;
+        }
+    }
     
     /**
      * 先序遍历二叉树
@@ -77,9 +80,35 @@ public class BinaryTreeDemo {
         if (root == null) {
             return;
         } else {
-            System.out.println(root.data);
+            root.visit();
             preOrderTraverse(root.lChild);
             preOrderTraverse(root.rChild);
+        }
+    }
+    
+    /**
+     * 中根遍历
+     */
+    public static void inOrderTraverse(BiTNode root){
+        if (root == null) {
+            return;
+        } else {
+            inOrderTraverse(root.lChild);
+            root.visit();
+            inOrderTraverse(root.rChild);
+        }
+    }
+    
+    /**
+     * 后根遍历
+     */
+    public static void postOrderTraverse(BiTNode root){
+        if (root == null) {
+            return;
+        } else {
+            postOrderTraverse(root.lChild);
+            postOrderTraverse(root.rChild);
+            root.visit();
         }
     }
     
@@ -103,6 +132,7 @@ class BiTNode {
 
     public void visit() {
         this.isVisited = true;
+        System.out.println(data);
     }
 
     public boolean isVisited() {
