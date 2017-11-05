@@ -1,4 +1,4 @@
-package com.leetcode.demos;
+package com.hxdaxu.algorithm;
 
 import java.util.Timer;
 import java.util.TimerTask;

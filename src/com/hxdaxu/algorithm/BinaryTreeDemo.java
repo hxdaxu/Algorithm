@@ -1,7 +1,4 @@
-package com.leetcode.demos;
-
-import java.util.Queue;
-import java.util.concurrent.ArrayBlockingQueue;
+package com.hxdaxu.algorithm;
 
 public class BinaryTreeDemo {
 
