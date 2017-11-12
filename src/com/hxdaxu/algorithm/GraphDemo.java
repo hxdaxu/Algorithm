@@ -5,7 +5,7 @@ package com.hxdaxu.algorithm;
 public class GraphDemo {
 
     public static void main(String[] args) {
-
+    	Object o = new Object();
     }
 
 }
