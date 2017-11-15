@@ -13,7 +13,6 @@ public class SynchronizationLock {
         // 1
         new Thread(new Runnable() {
 
-            @Override
             public void run() {
                 startScanTimer();
             }
@@ -21,7 +20,6 @@ public class SynchronizationLock {
         // 2
         new Thread(new Runnable() {
 
-            @Override
             public void run() {
                 cancelScanTimer();
             }
