@@ -3,6 +3,8 @@ package com.hxdaxu.algorithm;
 import java.util.Arrays;
 import java.util.LinkedList;
 
+import com.hxdaxu.algorithm.utils.CommonUtils;
+
 public class Linear_List {
 
 	public static void main(String[] args) {
@@ -18,9 +20,8 @@ public class Linear_List {
 		Integer c[] = {2,2,3,5,7};
 		Integer d[] = {4,5,8,9,11,13,67};
 		
-		// 错误！ArrayList不可以转换为LinkedList
-		LinkedList<Integer> listC = (LinkedList<Integer>)Arrays.asList(c); 
-		LinkedList<Integer> listD = (LinkedList<Integer>)Arrays.asList(d);
+		LinkedList<Integer> listC = CommonUtils.toLinkedList(Arrays.asList(c)); 
+		LinkedList<Integer> listD = CommonUtils.toLinkedList(Arrays.asList(d));
 		
 		mergeList(listC, listD);
 	}
@@ -78,7 +79,13 @@ public class Linear_List {
 		
 		return lC;
 	}
-
+	
+	/**
+	 * 使用java api，更简单
+	 * @param listA
+	 * @param listB
+	 * @return
+	 */
 	public static LinkedList<Integer> mergeList2(LinkedList<Integer> listA,LinkedList<Integer> listB){
 		LinkedList<Integer> lC = new LinkedList<Integer>();
 		
