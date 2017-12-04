@@ -20,4 +20,17 @@ public class CommonUtils {
 		return linkedList;
 	}
 
+	/**
+	 * 遍历整型数组
+	 * @param arrays
+	 */
+	public static void traverseArray(int arrays[]) {
+		for (int i = 0; i < arrays.length; i++) {
+			System.out.print(arrays[i]+" ");
+		}
+		// 换行
+		System.out.println("");
+	}
+	
+	
 }
