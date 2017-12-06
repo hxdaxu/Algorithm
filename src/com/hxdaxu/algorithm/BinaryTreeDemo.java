@@ -1,7 +1,11 @@
 package com.hxdaxu.algorithm;
 
 import java.util.Stack;
-
+/**
+ * 递归遍历二叉树。
+ * 非递归遍历二叉树。 
+ * 计算二叉树最大/小深度。
+ */
 public class BinaryTreeDemo {
 
 	public static void main(String[] args) {

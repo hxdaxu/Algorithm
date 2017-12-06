@@ -22,11 +22,9 @@ public class Sort {
 	 * 时间复杂度为O（n2）,空间复杂度为O(1)
 	 */
 	public static int[] bubbleSort(int[] array){
-		
 		boolean change = true;
 		for (int i = array.length-1; i >= 1 && change; --i) {
 			change = false;
-			
 			for (int j = 0; j < i; ++j) {
 				if (array[j] > array[j+1]) {
 					int t = array[j];

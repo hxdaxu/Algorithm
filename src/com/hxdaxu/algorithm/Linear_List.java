@@ -73,9 +73,9 @@ public class Linear_List {
 			lC.add(listB.get(j));
 		}
 		
-		while (!lC.isEmpty()){
-			System.out.print(lC.remove()+" ");
-		}
+//		while (!lC.isEmpty()){
+//			System.out.print(lC.remove()+" ");
+//		}
 		
 		return lC;
 	}
@@ -105,9 +105,10 @@ public class Linear_List {
 			lC.addAll(listB);
 		}
 		
-		while (!lC.isEmpty()){
-			System.out.print(lC.remove()+" ");
-		}
+		// 遍历
+//		while (!lC.isEmpty()){
+//			System.out.print(lC.remove()+" ");
+//		}
 		
 		return lC;
 	}
