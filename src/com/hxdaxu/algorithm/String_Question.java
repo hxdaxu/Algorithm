@@ -13,6 +13,7 @@ public class String_Question {
 	/**
 	 * Longest Substring Without Repeating Characters 
 	 * Given a string, find the length of the longest substring without repeating characters.
+	 * 给定一个字符串，找出没有重复字符的最长子字串的长度。
 	 * @param s
 	 * @return
 	 */
